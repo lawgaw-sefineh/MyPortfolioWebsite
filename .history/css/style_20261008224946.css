@@ -1,0 +1,406 @@
+/* =========================================================
+   css/style.css - Portfolio (Bootstrap + custom CSS)
+   Image paths start with ../images/ because this file is in css/
+   ========================================================= */
+
+/* ---------- 1. Colors and basics ---------- */
+:root {
+  --bg-dark: #0b1220;
+  --bg-card: #121a2e;
+  --accent: #38bdf8;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+} /* menu does not cover titles */
+
+body {
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    Arial,
+    sans-serif;
+  background: var(--bg-dark);
+  color: var(--text);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* ---------- 2. Navbar ---------- */
+.site-nav {
+  background: rgba(11, 18, 32, 0.92);
+  backdrop-filter: blur(6px);
+}
+.site-nav .nav-link {
+  color: var(--text);
+}
+.site-nav .nav-link:hover {
+  color: var(--accent);
+}
+
+/* ---------- 3. Buttons ---------- */
+.btn-accent {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #06111f;
+  font-weight: 600;
+}
+.btn-accent:hover {
+  background: #7dd3fc;
+  border-color: #7dd3fc;
+  color: #06111f;
+}
+
+/* ---------- 4. HERO (background image: images/hero-bg.jpg) ---------- */
+.hero {
+  min-height: 100vh;
+  padding: 6rem 0 3rem;
+  /* dark overlay on top of the image, so white text stays readable */
+  background-image:
+    linear-gradient(rgba(11, 18, 32, 0.75), rgba(11, 18, 32, 0.85)),
+    url("../images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--bg-dark); /* shows if the image is missing */
+}
+
+.hero-photo {
+  width: 130px;
+  height: 130px;
+  object-fit: cover; /* crops the photo to a square */
+  border: 4px solid var(--accent);
+}
+.btn {
+  display: inline-block;
+  margin: 10px 5px 0;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: var(--secondary);
+  color: var(--dark-bg);
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+.hero-hello {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+.hero-title {
+  font-size: 2.2rem;
+} /* mobile size */
+.hero-role {
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+/* ---------- 5. Sections ---------- */
+.section {
+  padding: 4rem 0;
+}
+.section-alt {
+  background: var(--bg-card);
+}
+
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+.section-title::after {
+  /* small line under each title */
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 0.6rem auto 0;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.contact .section-title::after {
+  display: none;
+}
+/* ---------- 6. About facts ---------- */
+.fact {
+  background: var(--bg-card);
+  border-radius: 0.75rem;
+  padding: 1rem 0.5rem;
+}
+.fact-number {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.fact-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+/* ---------- 7. Skills ---------- */
+.skill-card {
+  background: var(--bg-dark);
+  border: 1px solid #1e293b;
+  border-radius: 0.75rem;
+  padding: 1.5rem 1rem;
+  height: 100%;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+}
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+.skill-card h3 {
+  font-size: 1.15rem;
+  color: var(--accent);
+}
+.skill-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ---------- 8. Project cards ---------- */
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid #1e293b;
+  color: var(--text);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+}
+.project-card .card-img-top {
+  height: 200px;
+  object-fit: cover; /* all project images get the same size */
+}
+.project-card .card-text {
+  color: var(--muted);
+}
+
+/* ---------- 9. Contact (background image: images/contact-bg.jpg) ---------- */
+.section_gap {
+  padding: 60px 0;
+}
+
+.contact_area {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+}
+
+/* soft light-purple diagonal shape behind everything */
+.contact_area::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 70%;
+  height: 100%;
+  background: #faf9ff;
+  transform: skewX(-18deg);
+  z-index: 0;
+}
+
+.contact_area .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Left: contact info ---------- */
+.contact_info .info_item {
+  position: relative;
+  padding-left: 58px;      /* space for the icon */
+  margin-bottom: 30px;
+}
+
+.contact_info .info_item i {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #6c5ce7;          /* purple icon */
+}
+
+.contact_info .info_item h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+  color: #000;
+  margin: 0;
+}
+
+.contact_info .info_item h6 a {
+  color: #000;
+  text-decoration: none;
+}
+
+.contact_info .info_item p {
+  font-size: 16px;
+  line-height: 30px;
+  color: #777;
+  margin: 0;
+}
+
+/* ---------- Right: form ---------- */
+.contact_form .form-group {
+  margin-bottom: 13px;
+}
+.text-right{
+  display:flex;
+}
+.contact_form .form-control {
+  height: 47px;
+  padding: 0 26px;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #f0f0f5;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.contact_form .form-control::placeholder {
+  color: #999;
+}
+
+.contact_form .form-control:focus {
+  border-color: #6c5ce7;
+  box-shadow: none;
+  outline: none;
+}
+
+/* textarea matches the height of the 3 inputs (3×47 + 2×13) */
+.contact_form textarea.form-control {
+  height: 167px;
+  padding: 12px 26px;
+  resize: none;
+}
+
+/* ---------- Button ---------- */
+.primary_btn {
+  display: inline-block;
+  min-width: 264px;
+  height: 48px;
+  margin-top: 20px;
+  padding: 0 30px;
+  border: 0;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #4a56e2 0%, #8a4ff0 100%);
+  box-shadow: 0 10px 30px rgba(108, 92, 231, 0.35);
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(108, 92, 231, 0.45);
+}
+.contact {
+  background-image: linear-gradient(
+    135deg,
+    #0b1220 0%,
+    #0f2744 50%,
+    #0b3b5c 100%
+  );
+  background-color: var(--bg-dark);
+}
+/* ---------- 10. Footer ---------- */
+.site-footer {
+  background: #060a14;
+  color: var(--muted);
+}
+
+/* =========================================================
+   RESPONSIVE (media queries)
+   Bootstrap handles the columns; these change sizes only.
+   ========================================================= */
+
+/* Tablet: 768px and up */
+@media (min-width: 768px) {
+  .hero-photo {
+    width: 160px;
+    height: 160px;
+  }
+  .hero-title {
+    font-size: 3.2rem;
+  }
+  .hero-role {
+    font-size: 1.4rem;
+  }
+  .section {
+    padding: 5rem 0;
+  }
+  .section-title {
+    font-size: 2.3rem;
+  }
+}
+
+/* Desktop: 992px and up */
+@media (min-width: 992px) {
+  .hero-photo {
+    width: 190px;
+    height: 190px;
+  }
+  .hero-title {
+    font-size: 4rem;
+  }
+  .hero-role {
+    font-size: 1.6rem;
+  }
+  .project-card .card-img-top {
+    height: 220px;
+  }
+}
+
+/* Large desktop: 1400px and up */
+@media (min-width: 1400px) {
+  .hero-title {
+    font-size: 5rem;
+  }
+}
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+  .contact_info {
+    margin-bottom: 30px;
+  }
+  .contact_area::before {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .primary_btn {
+    width: 100%;
+  }
+}

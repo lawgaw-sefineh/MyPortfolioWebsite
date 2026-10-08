@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+   <html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 1. TITLE: the blue link in Google results. Keep it under 60 characters -->
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <title>Lawgaw | Full Stack Developer in Addis Ababa, Ethiopia</title>
+
+  <!-- 2. DESCRIPTION: the grey text under the title. Keep it 120 to 160 characters -->
+  <meta name="description" content="Lawgaw is a Computer Science student at Addis Ababa University and an aspiring full stack developer. See my responsive web projects built with HTML, CSS, Bootstrap and JavaScript.">
+
+  <!-- 3. Author and search robots -->
+  <meta name="author" content="Lawgaw [Your Last Name]">
+  <meta name="robots" content="index, follow">
+
+  <!-- 4. Canonical: the one real address of this page -->
+  <link rel="canonical" href="https://[your-username].github.io/">
+
+  <!-- 5. Open Graph: the card shown when you share the link on Telegram, LinkedIn, Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lawgaw | Full Stack Developer">
+  <meta property="og:description" content="Aspiring full stack developer from Addis Ababa. View my projects and get in touch.">
+  <meta property="og:url" content="https://[your-username].github.io/">
+  <meta property="og:image" content="https://[your-username].github.io/images/share-image.jpg">
+
+  <!-- 6. Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lawgaw | Full Stack Developer">
+  <meta name="twitter:description" content="Aspiring full stack developer from Addis Ababa. View my projects.">
+  <meta name="twitter:image" content="https://[your-username].github.io/images/share-image.jpg">
+
+  <!-- 7. Icon in the browser tab and color of the phone address bar -->
+  <meta name="theme-color" content="#0b1220">
+  <!-- 8. Structured data: tells Google who you are -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lawgaw Sefineh",
+    "jobTitle": "Aspiring Full Stack Developer",
+    "url": "https://lawgaw-sefineh.github.io/",
+    "image": "https://[your-username].github.io/images/profile.jpg",
+    "alumniOf": "Addis Ababa University",
+    "address": { "@type": "PostalAddress", "addressLocality": "Addis Ababa", "addressCountry": "ET" },
+    "sameAs": [
+      "https://github.com/[your-username]",
+      "https://linkedin.com/in/[your-username]"
+    ]
+  }
+  </script>
+  <!-- Bootstrap first, your CSS second -->
+   <link href="./css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav">
+        <div class="container">
+          <!-- <a class="navbar-brand fw-bold" href="#home">Lawgaw<span class="accent">. -->
+            <a class="navbar-brand logo_h" href="index.html"
+                  ><img src="images/logo.png" alt=""
+                /></a>
+          </span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+              <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+  <!-- ================= CONTACT =================
+       BACKGROUND IMAGE: images/contact-bg.jpg (set in CSS, class .contact) -->
+       <section class="contact_area section_gap mt-0-t">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="contact_info">
+                        <div class="info_item">
+                            <i class="lnr lnr-home"></i>
+                            <h6>California, United States</h6>
+                            <p>Santa monica bullevard</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="lnr lnr-phone-handset"></i>
+                            <h6><a href="#">00 (440) 9865 562</a></h6>
+                            <p>Mon to Fri 9am to 6 pm</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="lnr lnr-envelope"></i>
+                            <h6><a href="#">support@colorlib.com</a></h6>
+                            <p>Send us your query anytime!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-right">
+                            <button type="submit" value="submit" class="primary_btn">
+                                <span>Send Message</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+  <section id="contact" class="contact section text-center">
+    <div class="container">
+      <h2 class="section-title mb-3">Let's work together</h2>
+      <p class="lead mb-4">I am open to internships, junior roles and collaboration.</p>
+
+      <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+        <a href="mailto:lawgawsefineh1@gmail.com" class="btn btn-accent btn-lg">Email me</a>
+        <a href="https://github.com/lawgaw-sefineh" class="btn btn-outline-light btn-lg">GitHub</a>
+        <a href="https://linkedin.com/in/lawgaw-sefineh" class="btn btn-outline-light btn-lg">LinkedIn</a>
+        <a href="https://t.me/christSmary" class="btn btn-outline-light btn-lg">Telegram</a>
+      </div>
+    </div>
+  </section>
